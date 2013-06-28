@@ -57,8 +57,8 @@ public class Simulation {
         return numberOfWins;
     }
 
-    private float calculateWinChance(float numberOfWinsChangedDoors) {
-        return 100 * numberOfWinsChangedDoors / rounds;
+    private float calculateWinChance(int numberOfWins) {
+        return (float) 100 * numberOfWins / rounds;
     }
 
 }
