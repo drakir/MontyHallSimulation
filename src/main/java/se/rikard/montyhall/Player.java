@@ -2,11 +2,11 @@ package se.rikard.montyhall;
 
 public class Player {
 
-    public Door pickDoor(ImmutableDoors doors) {
+    public Door pickDoor(Doors doors) {
         return doors.randomDoor();
     }
 
-    public Door chooseOtherDoor(ImmutableDoors doors, Door pickedDoor, Door goatDoor) {
+    public Door chooseOtherDoor(Doors doors, Door pickedDoor, Door goatDoor) {
         return doors.without(pickedDoor, goatDoor).randomDoor();
     }
 }

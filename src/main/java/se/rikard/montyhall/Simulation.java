@@ -18,7 +18,7 @@ public class Simulation {
     public void run() {
         Player player = new Player();
         Moderator moderator = new Moderator();
-        ImmutableDoors doors = new ImmutableDoors(numberOfDoors);
+        Doors doors = new Doors(numberOfDoors);
 
         int numberOfWinsStay = simulatePlayerStay(player, doors);
         int numberOfWinsChangedDoors = simulatePlayerChangeDoor(player, moderator, doors);
@@ -28,7 +28,7 @@ public class Simulation {
     }
 
 
-    private int simulatePlayerStay(Player player, ImmutableDoors doors) {
+    private int simulatePlayerStay(Player player, Doors doors) {
         int numberOfWins = 0;
         for (int i = 0; i < rounds; i++) {
             doors = doors.shuffle();
@@ -41,7 +41,7 @@ public class Simulation {
         return numberOfWins;
     }
 
-    private int simulatePlayerChangeDoor(Player player, Moderator moderator, ImmutableDoors doors) {
+    private int simulatePlayerChangeDoor(Player player, Moderator moderator, Doors doors) {
         int numberOfWins = 0;
         for (int i = 0; i < rounds; i++) {
             doors = doors.shuffle();
